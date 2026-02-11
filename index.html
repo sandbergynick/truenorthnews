@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>True North News Alliance</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="True North Black Logo.png" alt="True North News Alliance">
+      </a>
+      <button class="mobile-menu-toggle" onclick="toggleMenu()">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="legislative-agenda.html">Legislative Agenda</a></li>
+        <li><a href="listening-session.html">Listening Session Report</a></li>
+        <li><a href="steering-committee.html">Steering Committee</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>True North News Alliance</h1>
+    <p>Strengthening local journalism across Minnesota through collaboration, advocacy, and community engagement.</p>
+    <div class="hero-buttons">
+      <a href="mailto:kdrake@momentum-advocacy.com?subject=Join%20the%20Mailing%20List" class="btn btn-primary">Join Our Mailing List</a>
+      <a href="https://newsmap.umn.edu/news-outlets-tracked" target="_blank" class="btn btn-outline">Find Your Local News</a>
+    </div>
+  </section>
+
+  <!-- Quick Links Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">What We Do</h2>
+      <p class="section-subtitle">The True North News Alliance brings together news organizations, nonprofits, and community partners to support and sustain local journalism in Minnesota.</p>
+
+      <div class="card-grid">
+        <div class="card">
+          <h3>About Us</h3>
+          <p>Learn about our mission, vision, and the coalition working to strengthen local news.</p>
+          <a href="about.html" class="btn btn-primary">Learn More</a>
+        </div>
+        <div class="card">
+          <h3>Legislative Agenda</h3>
+          <p>Explore our policy priorities and advocacy efforts at the state level.</p>
+          <a href="legislative-agenda.html" class="btn btn-primary">View Agenda</a>
+        </div>
+        <div class="card">
+          <h3>Listening Session Report</h3>
+          <p>Read findings from our community listening sessions across Minnesota.</p>
+          <a href="listening-session.html" class="btn btn-primary">Read Report</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Find Your Local News -->
+  <section class="find-news-section">
+    <div class="container">
+      <h2>Find Your Local News</h2>
+      <p>Search for news outlets in your community using the University of Minnesota's research database.</p>
+      <a href="https://newsmap.umn.edu/news-outlets-tracked" target="_blank" class="btn btn-primary">Search by City</a>
+    </div>
+  </section>
+
+  <!-- Steering Committee Preview -->
+  <section class="section section-light">
+    <div class="container">
+      <h2 class="section-title">Our Coalition</h2>
+      <p class="section-subtitle">The True North News Alliance is powered by a diverse coalition of organizations committed to supporting local journalism.</p>
+      <div style="text-align: center;">
+        <a href="steering-committee.html" class="btn btn-primary">View Steering Committee</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Stay Connected</h2>
+      <p>Join our mailing list to receive updates on our work and opportunities to get involved.</p>
+      <a href="mailto:kdrake@momentum-advocacy.com?subject=Join%20the%20Mailing%20List" class="btn btn-secondary">Get on Our Mailing List</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="logo">
+      <img src="True North Black Logo.png" alt="True North News Alliance">
+    </div>
+    <p>&copy; 2024 True North News Alliance. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
