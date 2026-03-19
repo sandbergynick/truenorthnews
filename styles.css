@@ -1,0 +1,640 @@
+/* True North News Alliance - Styles */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-dark: #2c586d;
+  --primary-blue: #2c586d;
+  --accent-blue: #21c3d8;
+  --light-blue: #e8f9fb;
+  --text-dark: #2d3748;
+  --text-gray: #4a5568;
+  --white: #ffffff;
+  --light-gray: #f7fafc;
+}
+
+body {
+  font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+
+/* Navigation */
+nav {
+  background: var(--white);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 90px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--accent-blue);
+}
+
+/* Mobile menu */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, #1a4a5e 50%, var(--accent-blue) 100%);
+  color: var(--white);
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  opacity: 0.9;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: var(--accent-blue);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: #1ba8bb;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: var(--white);
+  color: var(--primary-dark);
+}
+
+.btn-secondary:hover {
+  background: var(--light-gray);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--white);
+}
+
+.btn-outline:hover {
+  background: var(--white);
+  color: var(--primary-dark);
+}
+
+/* Hero buttons */
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Sections */
+.section {
+  padding: 5rem 2rem;
+}
+
+.section-light {
+  background: var(--light-gray);
+}
+
+.section-blue {
+  background: var(--light-blue);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  color: var(--primary-dark);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-gray);
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+}
+
+/* Cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+}
+
+.card p {
+  color: var(--text-gray);
+  margin-bottom: 1.5rem;
+}
+
+/* Page Header */
+.page-header {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, #1a4a5e 50%, var(--accent-blue) 100%);
+  color: var(--white);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/* Content */
+.content {
+  padding: 4rem 2rem;
+}
+
+.content h2 {
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+  margin-top: 2.5rem;
+}
+
+.content h2:first-child {
+  margin-top: 0;
+}
+
+.content h3 {
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.content p {
+  margin-bottom: 1rem;
+  color: var(--text-gray);
+}
+
+.content ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.content li {
+  margin-bottom: 0.5rem;
+  color: var(--text-gray);
+}
+
+/* Stats row for listening session */
+.stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-blue);
+  display: block;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-gray);
+  font-weight: 500;
+}
+
+/* PDF download button */
+.pdf-download {
+  background: var(--light-blue);
+  border: 2px solid var(--accent-blue);
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.pdf-download p {
+  color: var(--primary-dark);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+/* Values grid */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.value-card {
+  background: var(--light-gray);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-blue);
+}
+
+.value-card h3 {
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.value-card p {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+/* Steering Committee List */
+.org-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.org-list li {
+  background: var(--white);
+  padding: 1.25rem 1.5rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  color: var(--text-dark);
+  font-weight: 500;
+  border-left: 4px solid var(--accent-blue);
+}
+
+/* CTA Section */
+.cta-section {
+  background: var(--primary-dark);
+  color: var(--white);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+/* Footer */
+footer {
+  background: var(--text-dark);
+  color: var(--white);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+footer p {
+  opacity: 0.8;
+}
+
+footer .logo img {
+  height: 80px;
+  margin-bottom: 1rem;
+}
+
+/* Find News Section */
+.find-news-section {
+  background: var(--light-blue);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.find-news-section h2 {
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+}
+
+.find-news-section p {
+  color: var(--text-gray);
+  margin-bottom: 2rem;
+}
+
+/* Policy pillars for legislative page */
+.pillar {
+  background: var(--light-gray);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-left: 4px solid var(--accent-blue);
+}
+
+.pillar h3 {
+  color: var(--primary-dark);
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.pillar p {
+  margin-bottom: 0.75rem;
+}
+
+.pillar ul {
+  margin-left: 1.5rem;
+}
+
+.pillar li {
+  margin-bottom: 0.4rem;
+}
+
+/* Feedback table for listening session */
+.feedback-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+}
+
+.feedback-table th,
+.feedback-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: top;
+}
+
+.feedback-table th {
+  background: var(--primary-dark);
+  color: var(--white);
+  font-weight: 600;
+}
+
+.feedback-table tr:nth-child(even) {
+  background: var(--light-gray);
+}
+
+.feedback-table td {
+  color: var(--text-gray);
+}
+
+/* Rally Announcement Section */
+.rally-section {
+  background: linear-gradient(135deg, #1a3a4a 0%, var(--primary-dark) 100%);
+  color: var(--white);
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.rally-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 40px,
+    rgba(255,255,255,0.02) 40px,
+    rgba(255,255,255,0.02) 80px
+  );
+  pointer-events: none;
+}
+
+.rally-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.rally-badge {
+  display: inline-block;
+  background: var(--accent-blue);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 4px;
+  margin-bottom: 1.25rem;
+}
+
+.rally-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: var(--white);
+}
+
+.rally-date {
+  font-size: 1.1rem;
+  opacity: 0.65;
+  font-weight: 500;
+  margin-bottom: 1.75rem;
+}
+
+.rally-description {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  max-width: 720px;
+  margin: 0 auto 2rem;
+  opacity: 0.88;
+}
+
+.rally-schedule {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rally-event {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 1.25rem;
+  text-align: left;
+}
+
+.rally-time {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.5;
+  margin-bottom: 0.35rem;
+}
+
+.rally-event-name {
+  display: block;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.rally-event-detail {
+  display: block;
+  font-size: 0.85rem;
+  opacity: 0.6;
+  margin-top: 0.25rem;
+}
+
+.rally-pillars {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  opacity: 0.75;
+}
+
+.rally-cta {
+  font-size: 1.05rem;
+  padding: 1rem 2.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    flex-direction: column;
+    padding: 1rem 2rem;
+    gap: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo img {
+    height: 70px;
+  }
+
+  .stats-row {
+    gap: 1.5rem;
+  }
+
+  .feedback-table {
+    font-size: 0.85rem;
+  }
+
+  .feedback-table th,
+  .feedback-table td {
+    padding: 0.5rem;
+  }
+
+  .rally-title {
+    font-size: 1.75rem;
+  }
+
+  .rally-schedule {
+    grid-template-columns: 1fr;
+  }
+}
