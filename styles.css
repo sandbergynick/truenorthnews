@@ -561,6 +561,170 @@ footer .logo img {
   padding: 1rem 2.5rem;
 }
 
+/* Rally Slideshow */
+.rally-slideshow {
+  margin: 2.5rem auto 2.5rem;
+  max-width: 900px;
+}
+
+.slideshow-frame {
+  position: relative;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  aspect-ratio: 16 / 10;
+}
+
+.slideshow-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.slideshow-slide {
+  flex: 0 0 100%;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.slideshow-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.slideshow-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0));
+  color: var(--white);
+  padding: 2rem 1.5rem 1rem;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.slideshow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--primary-dark);
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.slideshow-btn:hover {
+  background: var(--white);
+  transform: translateY(-50%) scale(1.06);
+}
+
+.slideshow-prev {
+  left: 12px;
+}
+
+.slideshow-next {
+  right: 12px;
+}
+
+.slideshow-counter {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.55);
+  color: var(--white);
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  z-index: 2;
+}
+
+.slideshow-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1rem;
+}
+
+.slideshow-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.slideshow-dot:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.slideshow-dot.active {
+  background: var(--white);
+  transform: scale(1.2);
+}
+
+/* Rally pull-quote */
+.rally-quote {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 1.75rem 2rem;
+  background: rgba(255, 255, 255, 0.12);
+  border-left: 4px solid var(--white);
+  border-radius: 4px;
+  text-align: left;
+}
+
+.rally-quote p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 0.75rem;
+  color: var(--white);
+  opacity: 0.98;
+}
+
+.rally-quote cite {
+  display: block;
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  opacity: 0.85;
+}
+
+/* Rally CTA row */
+.rally-cta-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .nav-links {
@@ -624,5 +788,32 @@ footer .logo img {
 
   .rally-schedule {
     grid-template-columns: 1fr;
+  }
+
+  .slideshow-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  .slideshow-prev {
+    left: 6px;
+  }
+
+  .slideshow-next {
+    right: 6px;
+  }
+
+  .rally-quote {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .rally-quote p {
+    font-size: 1.05rem;
+  }
+
+  .rally-cta-row {
+    flex-direction: column;
+    align-items: center;
   }
 }
