@@ -34,36 +34,138 @@
     </div>
   </section>
 
-  <!-- Capitol Rally Announcement -->
+  <!-- Rally Debrief -->
   <section class="rally-section">
     <div class="container">
-      <span class="rally-badge">Upcoming Event</span>
-      <h2 class="rally-title">True North News Alliance Rally</h2>
+      <span class="rally-badge">Rally Debrief</span>
+      <h2 class="rally-title">A Capitol Rotunda Filled with Local News</h2>
       <p class="rally-date">April 7, 2026 &middot; Minnesota State Capitol Rotunda</p>
-      <p class="rally-description">Gather with journalists, community leaders, advocates, and civic partners at the Capitol to champion something every Minnesotan deserves: reliable local news, no matter where they live.</p>
-      <p class="rally-description">Thriving local journalism keeps communities informed, voters engaged, and neighbors empowered to influence the decisions that shape their lives. But when the local news ecosystem erodes, so does Minnesotans' connection to their local government and civic life.</p>
 
-      <div class="rally-schedule">
-        <div class="rally-event">
-          <span class="rally-time">9:00 – 9:30 a.m.</span>
-          <span class="rally-event-name">Networking &amp; Tabling</span>
+      <p class="rally-description">On April 7th, we did something this state has never seen before. Dozens of alliance members filled the Minnesota State Capitol Rotunda for our first-ever rally calling on lawmakers to invest in local news as essential civic infrastructure.</p>
+
+      <p class="rally-description">TV stations stood alongside print newsrooms. Ethnic and multilingual media stood alongside digital startups. Civic leaders, educators, elected officials, students, and community advocates from across Minnesota spoke with one voice: quality local information is a public good worthy of public investment. That kind of alignment doesn't happen by accident — it happens because all of you showed up.</p>
+
+      <!-- Slideshow -->
+      <div class="rally-slideshow" aria-roledescription="carousel" aria-label="Photos from the True North News Alliance Rally">
+        <div class="slideshow-frame">
+          <div class="slideshow-track" id="slideshowTrack">
+            <!-- Slides are populated by JS from the rallyPhotos array below -->
+          </div>
+
+          <button class="slideshow-btn slideshow-prev" id="slidePrev" aria-label="Previous photo">&#10094;</button>
+          <button class="slideshow-btn slideshow-next" id="slideNext" aria-label="Next photo">&#10095;</button>
+
+          <div class="slideshow-counter" id="slideCounter" aria-live="polite">1 / 1</div>
         </div>
-        <div class="rally-event">
-          <span class="rally-time">9:30 – 10:30 a.m.</span>
-          <span class="rally-event-name">Speaking Program</span>
-          <span class="rally-event-detail">Voices from across Minnesota's news landscape</span>
-        </div>
-        <div class="rally-event">
-          <span class="rally-time">10:30 – 11:30 a.m.</span>
-          <span class="rally-event-name">Networking &amp; Tabling</span>
-        </div>
+
+        <div class="slideshow-dots" id="slideDots" role="tablist"></div>
       </div>
 
-      <p class="rally-pillars">The Alliance is advancing three policy priorities: <strong>workforce development</strong> to build the next generation of journalists, <strong>media literacy</strong> to help communities navigate information, and <strong>sustainable funding</strong> for civic information.</p>
+      <p class="rally-description">The tabling participants and speaker lineup showed the alliance's breadth. True North Chair and 3HBC Host Yengyee Lor opened the rally, followed by Minnesota Star Tribune CEO Steve Grove, Sen. Heather Gustafson, Rep. Wayne Johnson, Jasmine Russell of the African American Leadership Forum, Charlie Weaver of the Metro Nonprofit News Network, and Anais Froberg-Martinez of ThreeSixty Journalism.</p>
 
-     <a href="https://docs.google.com/forms/d/e/1FAIpQLSflrEAypjDAz9IZ9VHUjKydGBV24PKItSS0PspfAHPoGDeGoQ/viewform" target="_blank" class="btn btn-primary rally-cta">Sign Up for the Rally &rarr;</a>
+      <p class="rally-description">Together, they laid out what's at stake. Since 2018, 97 local news outlets have closed across Minnesota, and the revenue models that once sustained community journalism have fractured. Yet the appetite for trustworthy local information hasn't gone away — Minnesotans still rely on and seek out local news.</p>
+
+      <blockquote class="rally-quote">
+        <p>&ldquo;Local media is civic infrastructure. When we invest in it, we protect trusted information, strengthen community voice, and make sure Minnesotans stay connected to the issues shaping their lives.&rdquo;</p>
+        <cite>&mdash; Yengyee Lor, True North Chair</cite>
+      </blockquote>
+
+      <p class="rally-description">The rally was just the opening. The Senate State and Local Government Committee held an informational hearing where True North made the case directly to legislators for why Minnesotans see local news and civic information as essential infrastructure. We're also helping advance 2026 legislative priorities, including the journalism workforce development bill (SF4183/HF4072) and the Minnesota Civic Seal (SF2565/HF2372).</p>
+
+      <div class="rally-cta-row">
+        <a href="https://www.startribune.com/" target="_blank" rel="noopener" class="btn btn-secondary rally-cta">Read Our Star Tribune Op-Ed &rarr;</a>
+        <a href="mailto:kdrake@momentum-advocacy.com" class="btn btn-primary rally-cta">Tell Us How You Want to Get Involved &rarr;</a>
+      </div>
     </div>
   </section>
+
+  <script>
+    // ===== Rally Slideshow =====
+    // To add or remove photos, edit this array. File names should match
+    // the images you place in the same folder as this HTML file (or use
+    // a path like "images/photo1.jpg").
+    const rallyPhotos = [
+      { src: "rally-photos/photo1.jpg", caption: "" },
+      { src: "rally-photos/photo2.jpg", caption: "" },
+      { src: "rally-photos/photo3.jpg", caption: "" },
+      { src: "rally-photos/photo4.jpg", caption: "" },
+      { src: "rally-photos/photo5.jpg", caption: "" },
+      { src: "rally-photos/photo6.jpg", caption: "" },
+      { src: "rally-photos/photo7.jpg", caption: "" },
+      { src: "rally-photos/photo8.jpg", caption: "" },
+      { src: "rally-photos/photo9.jpg", caption: "" },
+      { src: "rally-photos/photo10.jpg", caption: "" },
+      { src: "rally-photos/photo11.jpg", caption: "" },
+      { src: "rally-photos/photo12.jpg", caption: "" },
+      { src: "rally-photos/photo13.jpg", caption: "" },
+      { src: "rally-photos/photo14.jpg", caption: "" },
+      { src: "rally-photos/photo15.jpg", caption: "" },
+      { src: "rally-photos/photo16.jpg", caption: "" },
+      { src: "rally-photos/photo17.jpg", caption: "" },
+      { src: "rally-photos/photo18.jpg", caption: "" }
+    ];
+
+    (function initSlideshow() {
+      const track = document.getElementById("slideshowTrack");
+      const dotsContainer = document.getElementById("slideDots");
+      const counter = document.getElementById("slideCounter");
+      const prevBtn = document.getElementById("slidePrev");
+      const nextBtn = document.getElementById("slideNext");
+
+      if (!track || rallyPhotos.length === 0) return;
+
+      let currentIndex = 0;
+
+      // Build slides
+      rallyPhotos.forEach((photo, i) => {
+        const slide = document.createElement("div");
+        slide.className = "slideshow-slide";
+        slide.innerHTML = `
+          <img src="${photo.src}" alt="${photo.caption || 'True North News Alliance Rally photo ' + (i + 1)}" loading="lazy">
+          ${photo.caption ? `<div class="slideshow-caption">${photo.caption}</div>` : ""}
+        `;
+        track.appendChild(slide);
+
+        const dot = document.createElement("button");
+        dot.className = "slideshow-dot";
+        dot.setAttribute("aria-label", `Go to photo ${i + 1}`);
+        dot.addEventListener("click", () => goTo(i));
+        dotsContainer.appendChild(dot);
+      });
+
+      function update() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        counter.textContent = `${currentIndex + 1} / ${rallyPhotos.length}`;
+        document.querySelectorAll(".slideshow-dot").forEach((d, i) => {
+          d.classList.toggle("active", i === currentIndex);
+        });
+      }
+
+      function goTo(i) {
+        currentIndex = (i + rallyPhotos.length) % rallyPhotos.length;
+        update();
+      }
+
+      prevBtn.addEventListener("click", () => goTo(currentIndex - 1));
+      nextBtn.addEventListener("click", () => goTo(currentIndex + 1));
+
+      // Keyboard navigation
+      document.querySelector(".rally-slideshow").addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") goTo(currentIndex - 1);
+        if (e.key === "ArrowRight") goTo(currentIndex + 1);
+      });
+
+      // Hide nav controls if only one photo
+      if (rallyPhotos.length <= 1) {
+        prevBtn.style.display = "none";
+        nextBtn.style.display = "none";
+        dotsContainer.style.display = "none";
+        counter.style.display = "none";
+      }
+
+      update();
+    })();
+  </script>
 
   <!-- Quick Links Section -->
   <section class="section">
