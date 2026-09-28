@@ -397,7 +397,7 @@ nav {
 
 /* Job Posting */
 .job-posting {
-  padding: 4rem 2rem;
+  padding: 4rem 2rem 0;
 }
 
 .job-card {
