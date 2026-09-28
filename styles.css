@@ -94,6 +94,11 @@ nav {
   }
 }
 
+/* Menu items shown only in the mobile dropdown */
+.nav-mobile-only {
+  display: none;
+}
+
 /* Mobile menu */
 .mobile-menu-toggle {
   display: none;
@@ -909,10 +914,13 @@ footer .logo img {
     height: 70px;
   }
 
+  /* On phones the button moves into the dropdown menu */
   .nav-container .nav-find-news {
-    margin-left: 0.75rem;
-    padding: 0.5rem 0.9rem;
-    font-size: 0.85rem;
+    display: none;
+  }
+
+  .nav-mobile-only {
+    display: list-item;
   }
 
   .stats-row {
