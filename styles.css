@@ -64,6 +64,36 @@ nav {
   color: var(--accent-blue);
 }
 
+/* Find Your Local News button (nav) */
+.nav-container .nav-find-news {
+  margin-left: 1.5rem;
+  margin-right: auto;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+/* Tighten nav spacing on mid-size screens so links don't wrap next to the button */
+@media (min-width: 769px) and (max-width: 1180px) {
+  .logo img {
+    height: 70px;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+
+  .nav-container .nav-find-news {
+    margin-left: 0.75rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+}
+
 /* Mobile menu */
 .mobile-menu-toggle {
   display: none;
@@ -767,6 +797,12 @@ footer .logo img {
 
   .logo img {
     height: 70px;
+  }
+
+  .nav-container .nav-find-news {
+    margin-left: 0.75rem;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.85rem;
   }
 
   .stats-row {
