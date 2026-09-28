@@ -601,6 +601,11 @@ footer .logo img {
   overflow: hidden;
 }
 
+/* Retreat recap reuses the rally layout on a darker background */
+.retreat-section {
+  background: var(--primary-dark);
+}
+
 .rally-section .container {
   position: relative;
   z-index: 1;

@@ -91,6 +91,35 @@
     </div>
   </section>
 
+  <!-- Retreat Recap -->
+  <section class="rally-section retreat-section">
+    <div class="container">
+      <span class="rally-badge">Retreat Recap</span>
+      <h2 class="rally-title">Looking Ahead to 2027 in St. Cloud</h2>
+      <p class="rally-date">July 2026 &middot; St. Cloud, Minnesota</p>
+
+      <p class="rally-description">In July, True North's Executive Committee and Advisory Council gathered in St. Cloud for our strategic retreat to talk through next steps and what 2027 holds for the alliance.</p>
+
+      <!-- Slideshow -->
+      <div class="rally-slideshow" id="retreatSlideshow" aria-roledescription="carousel" aria-label="Photos from the True North News Alliance retreat">
+        <div class="slideshow-frame">
+          <div class="slideshow-track" id="retreatTrack">
+            <!-- Slides are populated by JS from the retreatPhotos array below -->
+          </div>
+
+          <button class="slideshow-btn slideshow-prev" id="retreatPrev" aria-label="Previous photo">&#10094;</button>
+          <button class="slideshow-btn slideshow-next" id="retreatNext" aria-label="Next photo">&#10095;</button>
+
+          <div class="slideshow-counter" id="retreatCounter" aria-live="polite">1 / 1</div>
+        </div>
+
+        <div class="slideshow-dots" id="retreatDots" role="tablist"></div>
+      </div>
+
+      <p class="rally-description">It was great to be in one room together: broadcasters and print newsrooms, digital startups and community outlets, small and large, all pulling in the same direction. Stay tuned for our 2027 legislative agenda!</p>
+    </div>
+  </section>
+
   <!-- Rally Debrief -->
   <section class="rally-section">
     <div class="container">
@@ -103,7 +132,7 @@
       <p class="rally-description">TV stations stood alongside print newsrooms. Ethnic and multilingual media stood alongside digital startups. Civic leaders, educators, elected officials, students, and community advocates from across Minnesota spoke with one voice: quality local information is a public good worthy of public investment. You don't see a room come together like that by accident. It came together because you all showed up.</p>
 
       <!-- Slideshow -->
-      <div class="rally-slideshow" aria-roledescription="carousel" aria-label="Photos from the True North News Alliance Rally">
+      <div class="rally-slideshow" id="rallySlideshow" aria-roledescription="carousel" aria-label="Photos from the True North News Alliance Rally">
         <div class="slideshow-frame">
           <div class="slideshow-track" id="slideshowTrack">
             <!-- Slides are populated by JS from the rallyPhotos array below -->
@@ -150,23 +179,32 @@
       { src: "rally-photos/2026-04-07_News Rally-106 (1).jpg", caption: "" },
     ];
 
-    (function initSlideshow() {
-      const track = document.getElementById("slideshowTrack");
-      const dotsContainer = document.getElementById("slideDots");
-      const counter = document.getElementById("slideCounter");
-      const prevBtn = document.getElementById("slidePrev");
-      const nextBtn = document.getElementById("slideNext");
+    // ===== Retreat Slideshow =====
+    // Same format as the rally photos above.
+    const retreatPhotos = [
+      { src: "retreat-photos/2026-07_Retreat-1.jpg", caption: "" },
+      { src: "retreat-photos/2026-07_Retreat-2.jpg", caption: "" },
+      { src: "retreat-photos/2026-07_Retreat-3.jpg", caption: "" },
+    ];
 
-      if (!track || rallyPhotos.length === 0) return;
+    function initSlideshow(ids, photos, altLabel) {
+      const root = document.getElementById(ids.root);
+      const track = document.getElementById(ids.track);
+      const dotsContainer = document.getElementById(ids.dots);
+      const counter = document.getElementById(ids.counter);
+      const prevBtn = document.getElementById(ids.prev);
+      const nextBtn = document.getElementById(ids.next);
+
+      if (!root || !track || photos.length === 0) return;
 
       let currentIndex = 0;
 
       // Build slides
-      rallyPhotos.forEach((photo, i) => {
+      photos.forEach((photo, i) => {
         const slide = document.createElement("div");
         slide.className = "slideshow-slide";
         slide.innerHTML = `
-          <img src="${photo.src}" alt="${photo.caption || 'True North News Alliance Rally photo ' + (i + 1)}" loading="lazy">
+          <img src="${photo.src}" alt="${photo.caption || altLabel + ' ' + (i + 1)}" loading="lazy">
           ${photo.caption ? `<div class="slideshow-caption">${photo.caption}</div>` : ""}
         `;
         track.appendChild(slide);
@@ -180,14 +218,14 @@
 
       function update() {
         track.style.transform = `translateX(-${currentIndex * 100}%)`;
-        counter.textContent = `${currentIndex + 1} / ${rallyPhotos.length}`;
-        document.querySelectorAll(".slideshow-dot").forEach((d, i) => {
+        counter.textContent = `${currentIndex + 1} / ${photos.length}`;
+        dotsContainer.querySelectorAll(".slideshow-dot").forEach((d, i) => {
           d.classList.toggle("active", i === currentIndex);
         });
       }
 
       function goTo(i) {
-        currentIndex = (i + rallyPhotos.length) % rallyPhotos.length;
+        currentIndex = (i + photos.length) % photos.length;
         update();
       }
 
@@ -195,13 +233,13 @@
       nextBtn.addEventListener("click", () => goTo(currentIndex + 1));
 
       // Keyboard navigation
-      document.querySelector(".rally-slideshow").addEventListener("keydown", (e) => {
+      root.addEventListener("keydown", (e) => {
         if (e.key === "ArrowLeft") goTo(currentIndex - 1);
         if (e.key === "ArrowRight") goTo(currentIndex + 1);
       });
 
       // Hide nav controls if only one photo
-      if (rallyPhotos.length <= 1) {
+      if (photos.length <= 1) {
         prevBtn.style.display = "none";
         nextBtn.style.display = "none";
         dotsContainer.style.display = "none";
@@ -209,7 +247,19 @@
       }
 
       update();
-    })();
+    }
+
+    initSlideshow(
+      { root: "rallySlideshow", track: "slideshowTrack", dots: "slideDots", counter: "slideCounter", prev: "slidePrev", next: "slideNext" },
+      rallyPhotos,
+      "True North News Alliance Rally photo"
+    );
+
+    initSlideshow(
+      { root: "retreatSlideshow", track: "retreatTrack", dots: "retreatDots", counter: "retreatCounter", prev: "retreatPrev", next: "retreatNext" },
+      retreatPhotos,
+      "True North News Alliance retreat photo"
+    );
   </script>
 
   <!-- Steering Committee Preview -->
